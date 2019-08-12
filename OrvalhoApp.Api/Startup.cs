@@ -29,9 +29,9 @@ namespace OrvalhoApp.Api
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<OrvalhoContext>(options => { 
-                options.UseSqlServer(Configuration.GetConnectionString("SqlServer"));
-            } );
+            // services.AddDbContext<OrvalhoContext>(options => { 
+            //     options.UseSqlServer(Configuration.GetConnectionString("SqlServer"));
+            // } );
 
 
             // DI
@@ -43,7 +43,7 @@ namespace OrvalhoApp.Api
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env, OrvalhoContext contexto)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env) //, OrvalhoContext contexto)
         {
             if (env.IsDevelopment())
             {
@@ -58,7 +58,7 @@ namespace OrvalhoApp.Api
             app.UseHttpsRedirection();
             app.UseMvc();
             
-            contexto.Database.EnsureCreated();
+            //contexto.Database.EnsureCreated();
 
             //IniciarDB.Initialize(contexto);
         }
