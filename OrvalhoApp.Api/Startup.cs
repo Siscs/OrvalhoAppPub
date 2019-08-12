@@ -60,6 +60,7 @@ namespace OrvalhoApp.Api
             
             //contexto.Database.EnsureCreated();
 
+            // subsituido pelo hasdata
             //IniciarDB.Initialize(contexto);
         }
     }
